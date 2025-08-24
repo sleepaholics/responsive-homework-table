@@ -142,3 +142,32 @@ header {
 .child:hover .label {
     display: block;
 } */
+
+/* ========== Tablet View (min-width: 772px) ========== */
+@media (min-width: 772px) {
+  /* Chọn các hộp nội dung: là các div trực tiếp dưới main hoặc body */
+  main > div,
+  body > div {
+    display: inline-block;   /* quan trọng: đổi display để xếp 2 cột */
+    width: 45vw;             /* 45% viewport width như đề bài */
+    vertical-align: top;     /* giúp các hộp thẳng hàng đỉnh */
+    box-sizing: border-box;  /* an toàn nếu có padding/border */
+  }
+
+  /* Ảnh không quá 30% viewport height */
+  img {
+    max-height: 30vh;        /* yêu cầu của đề */
+    width: 100%;
+    height: auto;
+    object-fit: cover;       /* cắt bớt cho gọn khung nếu cần */
+  }
+}
+
+/* ========== Large Screen View (min-width: 998px) ========== */
+@media (min-width: 998px) {
+  main > div,
+  body > div {
+    width: 30vw;             /* 30% viewport width như đề bài */
+    /* không cần thêm rule khác */
+  }
+}
